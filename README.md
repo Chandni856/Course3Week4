@@ -1,7 +1,7 @@
 # Course3Week4
-Peer-graded Assignment: Getting and Cleaning Data Course Project  (Coursera)
+## Peer-graded Assignment: Getting and Cleaning Data Course Project  (Coursera)
 
-Instructions for this assignment were:
+### Instructions for this assignment were:
 
 The purpose of this project is to demonstrate your ability to collect, work with, and clean a data set.
 Review criterialess 
@@ -13,7 +13,7 @@ Review criterialess
 
 =============================================================================================================
 
-The script required to generate the tidy data set is called run_analysis.R.
+### The script required to generate the tidy data set is called run_analysis.R.
 
 It has does several activities to complete the assignment.
   1. It loads the libraries, gathers the datasets from the websites and unzips the files. All of these files are read into data.frames.  This including pulling the variable names from the features.txt file and the activities names from activity_labels.txt.
