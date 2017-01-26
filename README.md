@@ -11,6 +11,8 @@ Review criterialess
 4. The README that explains the analysis files is clear and understandable.
 5. The work submitted for this project is the work of the student who submitted it
 
+=============================================================================================================
+
 The script required to generate the tidy data set is called run_analysis.R.
 
 It has does several activities to complete the assignment.
