@@ -11,6 +11,13 @@
 
 # load the packages
 library(dplyr)
+setwd("~/DataScience")
+
+# Create data folder
+if(!file.exists("data")) {
+  dir.create("data")
+}
+
 
 # get the data, load it into data.frames
 fileurl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
@@ -24,8 +31,8 @@ download.file(fileurl,destfile = "./data/rundata.names")
 col_names <- read.table("./UCI HAR Dataset/features.txt") # the variable names
 
 X_train <- read.table("./UCI HAR Dataset/train/X_train.txt", col.names = col_names[,2]) # the values from the activity
-y_train <- read.table("./UCI HAR Dataset/train/y_train.txt", col.names = c("activity")) # the activity
-subject_train <- read.table("./UCI HAR Dataset/train/subject_train.txt", col.names = c("subject")) # the subject
+y_train <- read.table("./UCI HAR Dataset/train/y_train.txt", col.names = as.factor(c("activity"))) # the activity
+subject_train <- read.table("./UCI HAR Dataset/train/subject_train.txt", col.names = as.factor(c("subject"))) # the subject
 
 #Activites: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
 X_test <- read.table("./UCI HAR Dataset/test/X_test.txt",  col.names = col_names[,2])  # the values from the activity
@@ -34,10 +41,8 @@ subject_test <- read.table("./UCI HAR Dataset/test/subject_test.txt", col.names 
 
 # ---------------------------------------------
 # 1. Merges the training and the test sets to create one data set.
-test <- cbind(X_test,y_test)
-test <- cbind(test,subject_test)
-train <- cbind(X_train,y_train)
-train <- cbind(train,subject_train)
+test <- cbind(X_test,y_test,subject_test)
+train <- cbind(X_train,y_train,subject_train)
 all <- rbind(test,train)
 
 # ---------------------------------------------
@@ -65,26 +70,10 @@ names(mean_std) <- gsub("\\.","",tolower(names(mean_std)))
 mean_std_grouped <- group_by(mean_std,activity,subject)
 tidy_data <- summarise_all(mean_std_grouped,mean)
 View(tidy_data)
-write.table(tidy_data,"./data/Course3Week4/tidy_data.txt")
+write.table(tidy_data,"./data/tidy_data.txt",quote = FALSE)
 
 
 # To view the tidy_data set provided you can run the follow commands
-# data <- read.table("./data/Course3Week4/tidy_data.txt", header = TRUE) 
+# data <- read.table("./data/tidy_data.txt", header = TRUE) 
 # View(data)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
