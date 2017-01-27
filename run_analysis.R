@@ -70,7 +70,7 @@ names(mean_std) <- gsub("\\.","",tolower(names(mean_std)))
 mean_std_grouped <- group_by(mean_std,activity,subject)
 tidy_data <- summarise_all(mean_std_grouped,mean)
 View(tidy_data)
-write.table(tidy_data,"./data/tidy_data.txt",quote = FALSE)
+write.table(tidy_data,"./data/tidy_data.txt",quote = FALSE, row.names = FALSE)
 
 
 # To view the tidy_data set provided you can run the follow commands
