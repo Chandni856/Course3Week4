@@ -1,7 +1,7 @@
 # Course3Week4
 ## Peer-graded Assignment: Getting and Cleaning Data Course Project  (Coursera)
 
-### Instructions for this assignment were:
+### Instructions for this assignment are:
 
 The purpose of this project is to demonstrate your ability to collect, work with, and clean a data set.
 Review criterialess 
