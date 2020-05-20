@@ -1,6 +1,6 @@
 # Data Dictionary for tidy_data.txt
 
-## activity -  1
+## activity :  1
         Activity description
                 WALKING
                 WALKING_UPSTAIRS
@@ -9,7 +9,7 @@
                 STANDING
                 LAYING
 		
-## subject - 1
+## subject : 1
         Subject id number
                 1 - 30
 	   
